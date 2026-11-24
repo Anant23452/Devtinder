@@ -1,17 +1,30 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router";
+
+import Body from "./pages/Body";
+import Login from "./components/login";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <>
-   <h1>Hellow </h1>
-   </>
-  )
+    <BrowserRouter>
+      <Routes>
+        {/* //parent route  */}
+        <Route path="/" element={<Body />} >
+        {/* childeren route  */}
+        
+       
+        <Route path="/login" element={<Login />} />
+        </Route>
+      </Routes>
+           <h1 className="text-3xl font-bold text-green-600">
+          Tailwind is Working! 🎉
+        </h1>
+    </BrowserRouter>
+    
+  );
 }
 
-export default App
+export default App;
