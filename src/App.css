@@ -1,6 +1,1 @@
-@import "tailwindcss";
-/* stylelint-disable at-rule-no-unknown */
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
-}
-/* stylelint-enable at-rule-no-unknown */
+/* App-specific styles go here */
