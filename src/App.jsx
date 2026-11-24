@@ -1,3 +1,4 @@
+import {Provider} from "react-redux"
 import {
   BrowserRouter,
   Routes,
@@ -9,7 +10,8 @@ import Login from "./components/login";
 
 function App() {
   return (
-    <BrowserRouter>
+   <Provider store= {appStore}>
+     <BrowserRouter>
       <Routes>
         {/* //parent route  */}
         <Route path="/" element={<Body />} >
@@ -21,6 +23,7 @@ function App() {
       </Routes>
         
     </BrowserRouter>
+    </Provider>
     
   );
 }
