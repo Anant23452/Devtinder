@@ -7,6 +7,9 @@ import {
 
 import Body from "./pages/Body";
 import Login from "./components/login";
+import appStore from "./utils/appStore";
+import Feed from "./pages/feed";
+
 
 function App() {
   return (
@@ -16,7 +19,7 @@ function App() {
         {/* //parent route  */}
         <Route path="/" element={<Body />} >
         {/* childeren route  */}
-        
+        <Route path="/" element={<Feed />} />
        
         <Route path="/login" element={<Login />} />
         </Route>

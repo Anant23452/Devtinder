@@ -1,10 +1,17 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { useNavigate } from "react-router";
+import axios from "axios";
+import { BASE_URL } from "../utils/constant";
 
 export default function Login() {
   const [email, setEmail] = useState("testuser@devtinder.com");
   const [password, setPassword] = useState("Password@123");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -12,28 +19,26 @@ export default function Login() {
     setSuccess("");
 
     try {
-      const response = await fetch("http://localhost:7777/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // Essential for receiving and sending the JWT cookie
-        body: JSON.stringify({
+      const response = await axios.post(
+        `${BASE_URL}/login`,
+        {
           emailId: email,
           password: password,
-        }),
-      });
+        },
+        {
+          withCredentials: true, // Essential for receiving and sending the JWT cookie
+        }
+      );
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || "Invalid credentials");
-      }
-
-      const userData = await response.json();
+      const userData = response.data;
       setSuccess(`Welcome back, ${userData.firstName}! 🎉`);
       console.log("Logged in user:", userData);
+      // Dispatch the user data to the Redux store
+      dispatch(addUser(userData));
+      // Redirect to home page
+      navigate("/");
     } catch (err) {
-      setError(err.message);
+      setError(err?.response?.data || err.message);
       console.error("Login failed:", err);
     }
   };
