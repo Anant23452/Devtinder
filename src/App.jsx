@@ -9,6 +9,7 @@ import Body from "./pages/Body";
 import Login from "./components/login";
 import appStore from "./utils/appStore";
 import Feed from "./pages/feed";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
       <Routes>
         {/* //parent route  */}
         <Route path="/" element={<Body />} >
-        {/* childeren route  */}
+        {/* children routes  */}
         <Route path="/" element={<Feed />} />
-       
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
         

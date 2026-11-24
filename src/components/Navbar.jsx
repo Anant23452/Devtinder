@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
 import { BASE_URL } from "../utils/constant";
+import { Link } from 'react-router';
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
@@ -30,9 +31,9 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm px-4">
       <div className="flex-1">
-        <a onClick={() => navigate("/")} className="btn btn-ghost text-xl cursor-pointer">
+        <Link to="/"   className="btn btn-ghost text-xl cursor-pointer">
           🔥 DevTinder
-        </a>
+        </Link>
       </div>
 
       <div className="flex gap-3 items-center">
@@ -55,12 +56,12 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-200 rounded-box z-10 mt-3 w-52 p-2 shadow-lg border border-base-300"
               >
                 <li>
-                  <a className="justify-between">
+                  <Link to="/profile" className="justify-between">
                     Profile
                     <span className="badge badge-primary">New</span>
-                  </a>
+                  </Link>
                 </li>
-                <li><a>Settings</a></li>
+                
                 <li>
                   <button onClick={handleLogout} className="text-error font-semibold">
                     Logout

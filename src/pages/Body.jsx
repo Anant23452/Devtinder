@@ -7,6 +7,7 @@ import { addUser } from '../utils/userSlice'
 import axios from 'axios'
 import { BASE_URL } from '../utils/constant'
 
+
 function Body() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
