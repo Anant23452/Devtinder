@@ -61,6 +61,18 @@ const Navbar = () => {
                     <span className="badge badge-primary">New</span>
                   </Link>
                 </li>
+                <li>
+                  <Link to="/connection" className="justify-between">
+                    Connection
+                   
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/request" className="justify-between">
+                    Request
+                    
+                  </Link>
+                </li>
                 
                 <li>
                   <button onClick={handleLogout} className="text-error font-semibold">

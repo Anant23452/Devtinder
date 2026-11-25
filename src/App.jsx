@@ -10,6 +10,8 @@ import Login from "./components/login";
 import appStore from "./utils/appStore";
 import Feed from "./pages/feed";
 import Profile from "./pages/Profile";
+import Connection from "./pages/Connection";
+import Request from "./pages/Request";
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/" element={<Feed />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/connection" element={<Connection />} />
+        <Route path ="/request" element={<Request/>}/>
         </Route>
       </Routes>
         
