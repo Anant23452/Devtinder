@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React from 'react'
 import { BASE_URL } from '../utils/constant'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addRequest } from '../utils/requestSlice';
 import { useEffect } from 'react';
 
 export default function Request() {
+    const request = useSelector((state)=>state.request)
     const dispatch= useDispatch();
     const fetchRequest = async()=>{
         try{
