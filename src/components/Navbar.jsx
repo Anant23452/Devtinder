@@ -73,6 +73,12 @@ const Navbar = () => {
                     
                   </Link>
                 </li>
+                <li>
+                  <Link to="/premium" className="justify-between">
+                    Premium💸
+                    
+                  </Link>
+                </li>
                 
                 <li>
                   <button onClick={handleLogout} className="text-error font-semibold">

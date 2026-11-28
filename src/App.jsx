@@ -20,15 +20,16 @@ function App() {
    <Provider store= {appStore}>
      <BrowserRouter>
       <Routes>
-        {/* //parent route  */}
-        <Route path="/" element={<Body />} >
-        {/* children routes  */}
-        <Route path="/" element={<Feed />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/connection" element={<Connection />} />
-        <Route path ="/request" element={<Request/>}/>
-        <Route path = "/premium" element={<Premium />}/>
+        {/* Parent layout route (renders Navbar + Outlet + Footer) */}
+        <Route path="/" element={<Body />}>
+          {/* Child routes rendered inside Body's <Outlet /> */}
+          <Route path="/" element={<Feed />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/connection" element={<Connection />} />
+          <Route path="/request" element={<Request />} />
+          <Route path="/premium" element={<Premium />} />
+        </Route>
         
       </Routes>
         
