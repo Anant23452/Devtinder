@@ -12,6 +12,7 @@ import Feed from "./pages/feed";
 import Profile from "./pages/Profile";
 import Connection from "./pages/Connection";
 import Request from "./pages/Request";
+import Premium from "./components/Premium";
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/connection" element={<Connection />} />
         <Route path ="/request" element={<Request/>}/>
-        </Route>
+        <Route path = "/premium" element={<Premium />}/>
+        
       </Routes>
         
     </BrowserRouter>
